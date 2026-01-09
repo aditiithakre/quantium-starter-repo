@@ -21,7 +21,7 @@ app.layout = html.Div(
             className="radio-group",
             children=[
                 dcc.RadioItems(
-                    id="region-selector",
+                    id="region-picker",
                     options=[
                         {"label": "All", "value": "all"},
                         {"label": "North", "value": "north"},
@@ -46,7 +46,7 @@ app.layout = html.Div(
 
 @app.callback(
     Output("sales-graph", "figure"),
-    Input("region-selector", "value")
+    Input("region-picker", "value")
 )
 def update_graph(selected_region):
     if selected_region == "all":
